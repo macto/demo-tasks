@@ -1,0 +1,10 @@
+{
+  "name": "demo-tasks",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "docker-compose up -d && npm start --prefix web",
+    "stop": "docker-compose down -v",
+    "postinstall": "npm install --prefix api && npm install --prefix web"
+  },
+  "license": "UNLICENSED"
+}
