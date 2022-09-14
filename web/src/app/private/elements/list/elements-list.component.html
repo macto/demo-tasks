@@ -1,0 +1,7 @@
+<div class="abo-page">
+    <ul *ngIf="rows$ | async as elements">
+        <li *ngFor="let elem of elements">
+            <span (click)="goToEdit(elem)">{{ elem.name }}</span>
+        </li>
+    </ul>
+</div>

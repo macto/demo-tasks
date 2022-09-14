@@ -1,0 +1,27 @@
+<div class="content" role="main" *transloco="let tr; scope: 'login'">
+
+    <form [formGroup]="loginForm" (submit)="doLogin()" (keyup.enter)="doLogin()">
+        <div>
+            <h1>{{ tr("login.title") }}</h1>
+        </div>
+        <div>
+            <input [formControlName]="'user'"
+                   [placeholder]="tr('login.user')" />
+        </div>
+        <div>
+            <input [formControlName]="'pass'"
+                   [placeholder]="tr('login.pass')" />
+        </div>
+        <div>
+            <span *ngIf="isError && !loginForm.dirty" class="done-text">
+                {{ tr("errors.auth") }}
+            </span>
+        </div>
+        <div>
+            <button *ngIf="!isLoading"
+                    [disabled]="loginForm.invalid"
+                    type="submit">{{ tr("login.submit") }}</button>
+        </div>
+    </form>
+
+</div>

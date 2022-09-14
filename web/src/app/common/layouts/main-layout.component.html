@@ -1,0 +1,11 @@
+<div class="abo-menu" *transloco="let tr">
+    <nav>
+        <ul>
+            <li><a [routerLink]="'/abo/dashboard'">{{ tr("menu.dashboard")}}</a></li>
+            <li><a [routerLink]="'/abo/elements'">{{ tr("menu.elements")}}</a></li>
+        </ul>
+    </nav>
+</div>
+<ng-container>
+    <router-outlet id="main-content"></router-outlet>
+</ng-container>

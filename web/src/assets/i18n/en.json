@@ -1,0 +1,15 @@
+{
+    "home": {
+        "title": "Demo Task Manager"
+    },
+    "tasks": {
+        "todo": "Tasks",
+        "done": "Done Tasks",
+        "add": "Add Task",
+        "save": "Save",
+        "cancel": "Cancel",
+        "actions": {
+            "close": "close"
+        }
+    }
+}

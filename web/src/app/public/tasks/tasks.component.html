@@ -1,0 +1,36 @@
+<div class="content" role="main" *transloco="let tr">
+
+    <h1>{{ tr("home.title") }}</h1>
+    <ng-container *ngIf="todoTasks$ | async as tasksList">
+        <h2>{{ tr("tasks.todo") }}</h2>
+        <ul>
+            <li *ngFor="let task of tasksList">
+                {{ task.name }} - {{ task.description }}<br>
+                <a (click)="doDone(task._id)" href="#">{{ tr("tasks.actions.close") }}</a>
+            </li>
+        </ul>
+    </ng-container>
+    <p>
+        <button *ngIf="!showNewTask" (click)="showNewTask = true">{{ tr("tasks.add") }}</button>
+    </p>
+    <ng-container *ngIf="showNewTask">
+        <form [formGroup]="theForm">
+            <input [formControlName]="'name'">
+            <input [formControlName]="'description'">
+            <p>
+                <button [disabled]="loadingSave" (click)="processForm()">{{ tr("tasks.save") }}</button>
+                <button (click)="showNewTask = false">{{ tr("tasks.cancel") }}</button>
+            </p>
+        </form>
+    </ng-container>
+
+    <ng-container *ngIf="doneTasks$ | async as tasks">
+        <h2>{{ tr("tasks.done") }}</h2>
+        <ul>
+            <li *ngFor="let task of tasks">
+                {{ task.name }}
+            </li>
+        </ul>
+    </ng-container>
+
+</div>

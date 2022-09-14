@@ -1,0 +1,15 @@
+{
+    "home": {
+        "title": "Gestor de Tareas (demo)"
+    },
+    "tasks": {
+        "todo": "Tareas",
+        "done": "Tareas Terminadas",
+        "add": "Nueva Tarea",
+        "save": "Guardar",
+        "cancel": "Cancelar",
+        "actions": {
+            "close": "cerrar"
+        }
+    }
+}
