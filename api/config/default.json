@@ -28,5 +28,5 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb://mongo/demo-todos"
+  "mongodb": "mongodb://demo:pass@mongo:27017/demo-tasks"
 }

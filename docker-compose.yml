@@ -14,3 +14,16 @@ services:
 
   mongo:
     image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb--vol:/data/db
+      - ./api/_docker:/docker-entrypoint-initdb.d/:ro
+    healthcheck:
+      test: "echo 'db.runCommand(\"ping\").ok'"
+      interval: 5s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  mongodb--vol:
